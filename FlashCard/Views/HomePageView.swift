@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct HomePageView: View {
-    @State private var isPresentedCreateCardSetsView = false
+    @ObservedObject private var viewModel: HomePageViewModel
+    @State private var isPresentedCreateCardSetsPageView = false
+    
+    init(viewModel: HomePageViewModel) {
+        self.viewModel = viewModel
+    }
 
     var body: some View {
         NavigationView {
             ScrollView {
-                CardSetList(viewModel: .init())
+                CardSetList(viewModel: .init(cardSets: viewModel.cardSets))
             }
             .navigationBarTitleDisplayMode(.inline)
             .navigationTitle(Text("Home"))
@@ -21,13 +26,19 @@ struct HomePageView: View {
                 leading: leadingNavigationBarItems,
                 trailing: trailingNavigationBarItems
             )
-            .sheet(isPresented: $isPresentedCreateCardSetsView) {
+            .sheet(
+                isPresented: $isPresentedCreateCardSetsPageView,
+                onDismiss: {
+                    viewModel.processPendingUpdates()
+                }
+            ) {
                 CreateCardSetsPageView(
-                    viewModel: .init(),
+                    viewModel: .init(mode: .createNew),
                     onCancelClicked: {
-                        isPresentedCreateCardSetsView = false
+                        isPresentedCreateCardSetsPageView = false
                     }, onDoneClicked: { cardSet in
-                        
+                        viewModel.addPendingUpdate(cardSet: cardSet)
+                        isPresentedCreateCardSetsPageView = false
                     }
                 )
             }
@@ -47,7 +58,7 @@ struct HomePageView: View {
     private var trailingNavigationBarItems: some View {
         HStack {
             Button(action: {
-                isPresentedCreateCardSetsView = true
+                isPresentedCreateCardSetsPageView = true
             }, label: {
                 Image(systemName: "plus")
             })
@@ -57,6 +68,6 @@ struct HomePageView: View {
 
 struct HomePageView_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView()
+        HomePageView(viewModel: .init(cardSets: []))
     }
 }

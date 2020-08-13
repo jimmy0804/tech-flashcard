@@ -7,14 +7,6 @@
 
 import SwiftUI
 
-struct CardSetListItemViewModel  {
-    let id = UUID()
-    let systemImageName: String
-    let systemImageColor: Color
-    let title: String
-    let subtitle: String
-}
-
 struct CardSetListItem: View {
     let viewModel: CardSetListItemViewModel
 
@@ -55,16 +47,13 @@ struct CardSetListItem: View {
         .padding(.all)
         .background(Color(.secondarySystemBackground))
         .cornerRadius(10.0)
+        .contentShape(RoundedRectangle(cornerRadius: 10.0, style: .continuous))
     }
 }
 
 struct CardSetListItem_Previews: PreviewProvider {
     static var previews: some View {
-        let viewModel = CardSetListItemViewModel(
-            systemImageName: "number.circle.fill",
-            systemImageColor: .purple,
-            title: "Bit Maniplication",
-            subtitle: "50 cards")
+        let viewModel = CardSetListItemViewModel(cardSet: .init(icon: "number.circle.fill", title: "Bit Maniplication", themeColor: .purple, cards: []))
 
         Group {
             CardSetListItem(viewModel: viewModel)

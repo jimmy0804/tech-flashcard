@@ -19,6 +19,8 @@
 		B0692FE224E4FA2500C40BA6 /* CreateCardSetsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE124E4FA2500C40BA6 /* CreateCardSetsPageView.swift */; };
 		B0692FE524E5163100C40BA6 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE424E5163100C40BA6 /* CardSet.swift */; };
 		B0692FE724E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */; };
+		B0692FEB24E52FF400C40BA6 /* CardSetListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */; };
+		B0692FED24E5314A00C40BA6 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FEC24E5314A00C40BA6 /* HomePageViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		B0692FE124E4FA2500C40BA6 /* CreateCardSetsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardSetsPageView.swift; sourceTree = "<group>"; };
 		B0692FE424E5163100C40BA6 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardSetsPageViewModel.swift; sourceTree = "<group>"; };
+		B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetListItemViewModel.swift; sourceTree = "<group>"; };
+		B0692FEC24E5314A00C40BA6 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +152,10 @@
 			isa = PBXGroup;
 			children = (
 				B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */,
+				B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */,
 				B002C0A624CD984800F6DC70 /* CardSetList.swift */,
 				B0692FDF24E4ECA000C40BA6 /* HomePageView.swift */,
+				B0692FEC24E5314A00C40BA6 /* HomePageViewModel.swift */,
 				B0692FE124E4FA2500C40BA6 /* CreateCardSetsPageView.swift */,
 				B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */,
 			);
@@ -294,8 +300,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B002C0A524CD983F00F6DC70 /* CardSetListItem.swift in Sources */,
+				B0692FEB24E52FF400C40BA6 /* CardSetListItemViewModel.swift in Sources */,
 				B0692FE724E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift in Sources */,
 				B002C07B24CD96FE00F6DC70 /* ContentView.swift in Sources */,
+				B0692FED24E5314A00C40BA6 /* HomePageViewModel.swift in Sources */,
 				B002C07924CD96FE00F6DC70 /* FlashCardApp.swift in Sources */,
 				B0692FE524E5163100C40BA6 /* CardSet.swift in Sources */,
 				B0692FE224E4FA2500C40BA6 /* CreateCardSetsPageView.swift in Sources */,

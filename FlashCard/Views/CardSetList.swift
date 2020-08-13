@@ -8,26 +8,10 @@
 import SwiftUI
 
 final class CardSetListViewModel: ObservableObject {
-    @Published var items: [CardSetListItemViewModel]
+    @Published var items = [CardSetListItemViewModel]()
     
-    init() {
-        items = [
-            CardSetListItemViewModel(
-                systemImageName: "number.circle.fill",
-                systemImageColor: .purple,
-                title: "Bit Maniplication",
-                subtitle: "50 cards"),
-            CardSetListItemViewModel(
-                systemImageName: "number.circle.fill",
-                systemImageColor: .purple,
-                title: "Bit Maniplication1",
-                subtitle: "50 cards"),
-            CardSetListItemViewModel(
-                systemImageName: "number.circle.fill",
-                systemImageColor: .purple,
-                title: "Bit Maniplication2 Bit Maniplication2 Bit Maniplication2",
-                subtitle: "50 cards")
-        ]
+    init(cardSets: [CardSet]) {
+        items = cardSets.map { CardSetListItemViewModel(cardSet: $0) }
     }
 }
 
@@ -36,25 +20,36 @@ struct CardSetList: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
-                Text("Sets")
-                    .font(.headline)
-                Spacer()
-            }
-            .padding(.vertical)
+            makeListHeader(title: "Sets")
             
             LazyVStack() {
-                ForEach(viewModel.items, id: \.title) { itemViewModel in
+                ForEach(viewModel.items) { itemViewModel in
                     CardSetListItem(viewModel: itemViewModel)
+                        .contextMenu {
+                            Text("Menu Item 1")
+                            Text("Menu Item 2")
+                            Text("Menu Item 3")
+                        }
+                        .animation(nil)
                 }
             }
+            .animation(Animation.easeInOut.delay(0.5))
         }
         .padding(.horizontal)
+    }
+    
+    private func makeListHeader(title: String) -> some View {
+        HStack {
+            Text(title)
+                .font(.headline)
+            Spacer()
+        }
+        .padding(.vertical)
     }
 }
 
 struct CardSetList_Previews: PreviewProvider {
     static var previews: some View {
-        CardSetList(viewModel: CardSetListViewModel())
+        CardSetList(viewModel: CardSetListViewModel(cardSets: []))
     }
 }

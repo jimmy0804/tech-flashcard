@@ -2,7 +2,7 @@
 //  CreateCardSetsPageViewModel.swift
 //  FlashCard
 //
-//  Created by Yeung, Jimmy(AWF) on 13/8/2020.
+//  Created by Jimmy, Yeung on 13/8/2020.
 //
 
 import SwiftUI
@@ -14,25 +14,32 @@ final class CreateCardSetsPageViewModel: ObservableObject {
         case edit(CardSet)
     }
 
-    @Published var icon = ""
+    @Published var icon = "number.circle.fill"
     @Published var themeColor = Color.purple
     @Published var title = ""
     @Published var cards = [Card]()
     
     @Published var isValidToSave = false
 
+    private let mode: Mode
     private var cancellableSet = Set<AnyCancellable>()
     
     init(mode: Mode = .createNew) {
-        handleMode(mode)
+        self.mode = mode
+        handleMode()
         startValidateAllFields()
     }
     
     func makeCardSet() -> CardSet {
-        .init(icon: icon, title: title, themeColor: themeColor, cards: cards)
+        switch mode {
+        case .createNew:
+            return .init(icon: icon, title: title, themeColor: themeColor, cards: cards)
+        case .edit(let oldCardSet):
+            return .init(id: oldCardSet.id, icon: icon, title: title, themeColor: themeColor, cards: cards)
+        }
     }
     
-    private func handleMode(_ mode: Mode) {
+    private func handleMode() {
         switch mode {
         case .createNew:
             break
@@ -51,7 +58,7 @@ final class CreateCardSetsPageViewModel: ObservableObject {
     private func startValidateAllFields() {
         Publishers.CombineLatest3($icon, $title, $cards)
             .map { icon, title, cards in
-                return !icon.isEmpty && !title.isEmpty && cards.count > 0
+                return !icon.isEmpty && !title.isEmpty // && cards.count > 0
             }
             .assign(to: \.isValidToSave, on: self)
             .store(in: &cancellableSet)

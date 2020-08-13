@@ -9,11 +9,23 @@ import Foundation
 import SwiftUI
 
 struct CardSet {
-    let id = UUID()
+    let id: UUID
     var icon: String
     var title: String
     var themeColor: Color
     var cards: [Card]
+    
+    init(id: UUID = UUID(),
+         icon: String,
+         title: String,
+         themeColor: Color,
+         cards: [Card]) {
+        self.id = id
+        self.icon = icon
+        self.title = title
+        self.themeColor = themeColor
+        self.cards = cards
+    }
 }
 
 struct Card {
