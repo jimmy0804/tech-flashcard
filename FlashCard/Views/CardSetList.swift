@@ -2,7 +2,7 @@
 //  CardSetList.swift
 //  FlashCard
 //
-//  Created by Yeung, Jimmy(AWF) on 26/7/2020.
+//  Created by Jimmy, Yeung on 26/7/2020.
 //
 
 import SwiftUI
@@ -25,7 +25,7 @@ final class CardSetListViewModel: ObservableObject {
             CardSetListItemViewModel(
                 systemImageName: "number.circle.fill",
                 systemImageColor: .purple,
-                title: "Bit Maniplication2",
+                title: "Bit Maniplication2 Bit Maniplication2 Bit Maniplication2",
                 subtitle: "50 cards")
         ]
     }
@@ -35,14 +35,21 @@ struct CardSetList: View {
     @ObservedObject var viewModel: CardSetListViewModel
 
     var body: some View {
-        ScrollView {
-            LazyVStack {
+        VStack(spacing: 0) {
+            HStack {
+                Text("Sets")
+                    .font(.headline)
+                Spacer()
+            }
+            .padding(.vertical)
+            
+            LazyVStack() {
                 ForEach(viewModel.items, id: \.title) { itemViewModel in
                     CardSetListItem(viewModel: itemViewModel)
                 }
             }
-            .padding(.horizontal)
         }
+        .padding(.horizontal)
     }
 }
 

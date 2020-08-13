@@ -10,14 +10,42 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            CardSetList(viewModel: .init())
-                .navigationTitle(Text("Card Set"))
+            HomeView()
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationTitle(Text("Home"))
+                .navigationBarItems(leading: leadingNavigationBarItems,
+                                    trailing: trailingNavigationBarItems)
+        }
+    }
+    
+    private var leadingNavigationBarItems: some View {
+        HStack {
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "gear")
+            })
+        }
+    }
+    
+    private var trailingNavigationBarItems: some View {
+        HStack {
+            Button(action: {
+                
+            }, label: {
+                Image(systemName: "plus")
+            })
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+                .preferredColorScheme(.dark)
+            ContentView()
+                .preferredColorScheme(.light)
+        }
     }
 }

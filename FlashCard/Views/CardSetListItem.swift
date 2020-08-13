@@ -21,35 +21,40 @@ struct CardSetListItem: View {
     private let iconSize: CGFloat = 33.0
     
     var body: some View {
-        ZStack {
-            Rectangle()
-//                .foregroundColor(.)
-            HStack(spacing: 16.0) {
-                ZStack {
-                    Image(systemName: viewModel.systemImageName)
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(viewModel.systemImageColor)
-                        .frame(width: iconSize, height: iconSize, alignment: .center)
-                }
-                
-                VStack(alignment: .leading) {
-                    Text(viewModel.title)
-                        .font(.title)
-                        .fontWeight(.bold)
+        HStack {
+            VStack {
+                Image(systemName: viewModel.systemImageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(viewModel.systemImageColor)
+                    .frame(width: iconSize, height: iconSize, alignment: .center)
+                Spacer()
+            }
+            
+            VStack(alignment: .leading) {
+                Text(viewModel.title)
+                    .fontWeight(.bold)
+                    .font(.title2)
+                    .lineLimit(2)
 
-                    Text(viewModel.subtitle)
-                        .font(.callout)
-                        .foregroundColor(.secondary)
-                }
-                
+                Text(viewModel.subtitle)
+                    .font(.callout)
+                    .foregroundColor(.secondary)
+            }
+            
+            Spacer()
+            
+            VStack {
+                Spacer()
                 Image(systemName: "chevron.right")
                     .foregroundColor(.secondary)
                     .font(.body)
+                Spacer()
             }
-            .padding(.all)
         }
-        .cornerRadius(5.0)
+        .padding(.all)
+        .background(Color(.secondarySystemBackground))
+        .cornerRadius(10.0)
     }
 }
 
@@ -64,14 +69,12 @@ struct CardSetListItem_Previews: PreviewProvider {
         Group {
             CardSetListItem(viewModel: viewModel)
                 .preferredColorScheme(.light)
-                .previewLayout(.sizeThatFits)
             CardSetListItem(viewModel: viewModel)
                 .preferredColorScheme(.dark)
-                .previewLayout(.sizeThatFits)
             CardSetListItem(viewModel: viewModel)
                 .preferredColorScheme(.light)
                 .environment(\.sizeCategory, .extraExtraLarge)
-                .previewLayout(.sizeThatFits)
         }
+        .previewLayout(.fixed(width: 400, height: 150))
     }
 }

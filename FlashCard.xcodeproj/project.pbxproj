@@ -15,6 +15,7 @@
 		B002C09624CD96FF00F6DC70 /* FlashCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B002C09524CD96FF00F6DC70 /* FlashCardUITests.swift */; };
 		B002C0A524CD983F00F6DC70 /* CardSetListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */; };
 		B002C0A724CD984800F6DC70 /* CardSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B002C0A624CD984800F6DC70 /* CardSetList.swift */; };
+		B0692FE024E4ECA000C40BA6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FDF24E4ECA000C40BA6 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B002C09724CD96FF00F6DC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetListItem.swift; sourceTree = "<group>"; };
 		B002C0A624CD984800F6DC70 /* CardSetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetList.swift; sourceTree = "<group>"; };
+		B0692FDF24E4ECA000C40BA6 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			children = (
 				B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */,
 				B002C0A624CD984800F6DC70 /* CardSetList.swift */,
+				B0692FDF24E4ECA000C40BA6 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				B002C0A524CD983F00F6DC70 /* CardSetListItem.swift in Sources */,
 				B002C07B24CD96FE00F6DC70 /* ContentView.swift in Sources */,
 				B002C07924CD96FE00F6DC70 /* FlashCardApp.swift in Sources */,
+				B0692FE024E4ECA000C40BA6 /* HomeView.swift in Sources */,
 				B002C0A724CD984800F6DC70 /* CardSetList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
