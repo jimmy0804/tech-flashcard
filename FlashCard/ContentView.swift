@@ -9,33 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
-            HomeView()
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationTitle(Text("Home"))
-                .navigationBarItems(leading: leadingNavigationBarItems,
-                                    trailing: trailingNavigationBarItems)
-        }
-    }
-    
-    private var leadingNavigationBarItems: some View {
-        HStack {
-            Button(action: {
-                
-            }, label: {
-                Image(systemName: "gear")
-            })
-        }
-    }
-    
-    private var trailingNavigationBarItems: some View {
-        HStack {
-            Button(action: {
-                
-            }, label: {
-                Image(systemName: "plus")
-            })
-        }
+        HomePageView()
     }
 }
 

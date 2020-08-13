@@ -16,8 +16,8 @@ struct CardSetListItemViewModel  {
 }
 
 struct CardSetListItem: View {
-    @Environment(\.sizeCategory) var sizeCategory
     let viewModel: CardSetListItemViewModel
+
     private let iconSize: CGFloat = 33.0
     
     var body: some View {
