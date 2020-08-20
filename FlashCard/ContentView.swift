@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomePage(viewModel: .init(cardSets: []))
+        HomePage(viewModel: .init(cardSets: [.init(icon: "", title: "test", themeColor: .green, cards: [])]))
     }
 }
 

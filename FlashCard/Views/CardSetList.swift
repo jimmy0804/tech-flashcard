@@ -24,13 +24,15 @@ struct CardSetList: View {
             
             LazyVStack() {
                 ForEach(viewModel.items) { itemViewModel in
-                    CardSetListItem(viewModel: itemViewModel)
-                        .contextMenu {
-                            Text("Menu Item 1")
-                            Text("Menu Item 2")
-                            Text("Menu Item 3")
-                        }
-                        .animation(nil)
+                    NavigationLink(destination: FlashCardPage()) {
+                        CardSetListItem(viewModel: itemViewModel)
+                            .contextMenu {
+                                Text("Menu Item 1")
+                                Text("Menu Item 2")
+                                Text("Menu Item 3")
+                            }
+                            .animation(nil)
+                    }
                 }
             }
             .animation(Animation.easeInOut.delay(0.5))
