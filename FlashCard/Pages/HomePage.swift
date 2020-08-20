@@ -1,5 +1,5 @@
 //
-//  HomePageView.swift
+//  HomePage.swift
 //  FlashCard
 //
 //  Created by Jimmy, Yeung on 13/8/2020.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct HomePageView: View {
+struct HomePage: View {
     @ObservedObject private var viewModel: HomePageViewModel
     @State private var isPresentedCreateCardSetsPageView = false
     
@@ -32,7 +32,7 @@ struct HomePageView: View {
                     viewModel.processPendingUpdates()
                 }
             ) {
-                CreateCardSetsPageView(
+                CreateCardSetsPage(
                     viewModel: .init(mode: .createNew),
                     onCancelClicked: {
                         isPresentedCreateCardSetsPageView = false
@@ -66,8 +66,8 @@ struct HomePageView: View {
     }
 }
 
-struct HomePageView_Previews: PreviewProvider {
+struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
-        HomePageView(viewModel: .init(cardSets: []))
+        HomePage(viewModel: .init(cardSets: []))
     }
 }

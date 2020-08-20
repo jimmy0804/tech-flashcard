@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HomePageView(viewModel: .init(cardSets: []))
+        HomePage(viewModel: .init(cardSets: []))
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  CreateCardSetsPageView.swift
+//  CreateCardSetsPage.swift
 //  FlashCard
 //
 //  Created by Jimmy, Yeung on 13/8/2020.
@@ -8,7 +8,7 @@
 import SwiftUI
 import Combine
 
-struct CreateCardSetsPageView: View {
+struct CreateCardSetsPage: View {
     @ObservedObject private var viewModel: CreateCardSetsPageViewModel
     private let onCancelClicked: (() -> Void)?
     private let onDoneClicked: ((CardSet) -> Void)?
@@ -88,8 +88,8 @@ struct CreateCardSetsPageView: View {
     }
 }
 
-struct CreateCardSetsPageView_Previews: PreviewProvider {
+struct CreateCardSetsPage_Previews: PreviewProvider {
     static var previews: some View {
-        CreateCardSetsPageView(viewModel: .init())
+        CreateCardSetsPage(viewModel: .init())
     }
 }

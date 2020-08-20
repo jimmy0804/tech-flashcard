@@ -15,8 +15,8 @@
 		B002C09624CD96FF00F6DC70 /* FlashCardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B002C09524CD96FF00F6DC70 /* FlashCardUITests.swift */; };
 		B002C0A524CD983F00F6DC70 /* CardSetListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */; };
 		B002C0A724CD984800F6DC70 /* CardSetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B002C0A624CD984800F6DC70 /* CardSetList.swift */; };
-		B0692FE024E4ECA000C40BA6 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FDF24E4ECA000C40BA6 /* HomePageView.swift */; };
-		B0692FE224E4FA2500C40BA6 /* CreateCardSetsPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE124E4FA2500C40BA6 /* CreateCardSetsPageView.swift */; };
+		B0692FE024E4ECA000C40BA6 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FDF24E4ECA000C40BA6 /* HomePage.swift */; };
+		B0692FE224E4FA2500C40BA6 /* CreateCardSetsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE124E4FA2500C40BA6 /* CreateCardSetsPage.swift */; };
 		B0692FE524E5163100C40BA6 /* CardSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE424E5163100C40BA6 /* CardSet.swift */; };
 		B0692FE724E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */; };
 		B0692FEB24E52FF400C40BA6 /* CardSetListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */; };
@@ -55,8 +55,8 @@
 		B002C09724CD96FF00F6DC70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetListItem.swift; sourceTree = "<group>"; };
 		B002C0A624CD984800F6DC70 /* CardSetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetList.swift; sourceTree = "<group>"; };
-		B0692FDF24E4ECA000C40BA6 /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
-		B0692FE124E4FA2500C40BA6 /* CreateCardSetsPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardSetsPageView.swift; sourceTree = "<group>"; };
+		B0692FDF24E4ECA000C40BA6 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		B0692FE124E4FA2500C40BA6 /* CreateCardSetsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardSetsPage.swift; sourceTree = "<group>"; };
 		B0692FE424E5163100C40BA6 /* CardSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSet.swift; sourceTree = "<group>"; };
 		B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCardSetsPageViewModel.swift; sourceTree = "<group>"; };
 		B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardSetListItemViewModel.swift; sourceTree = "<group>"; };
@@ -111,8 +111,9 @@
 		B002C07724CD96FE00F6DC70 /* FlashCard */ = {
 			isa = PBXGroup;
 			children = (
-				B0692FE324E5160300C40BA6 /* Models */,
 				B002C0A324CD97F900F6DC70 /* Views */,
+				BF1DA5E024EE319D0057E16F /* Pages */,
+				B0692FE324E5160300C40BA6 /* Models */,
 				B002C07824CD96FE00F6DC70 /* FlashCardApp.swift */,
 				B002C07A24CD96FE00F6DC70 /* ContentView.swift */,
 				B002C07C24CD96FE00F6DC70 /* Assets.xcassets */,
@@ -154,10 +155,6 @@
 				B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */,
 				B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */,
 				B002C0A624CD984800F6DC70 /* CardSetList.swift */,
-				B0692FDF24E4ECA000C40BA6 /* HomePageView.swift */,
-				B0692FEC24E5314A00C40BA6 /* HomePageViewModel.swift */,
-				B0692FE124E4FA2500C40BA6 /* CreateCardSetsPageView.swift */,
-				B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +165,17 @@
 				B0692FE424E5163100C40BA6 /* CardSet.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BF1DA5E024EE319D0057E16F /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				B0692FE124E4FA2500C40BA6 /* CreateCardSetsPage.swift */,
+				B0692FE624E51DBB00C40BA6 /* CreateCardSetsPageViewModel.swift */,
+				B0692FDF24E4ECA000C40BA6 /* HomePage.swift */,
+				B0692FEC24E5314A00C40BA6 /* HomePageViewModel.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,8 +314,8 @@
 				B0692FED24E5314A00C40BA6 /* HomePageViewModel.swift in Sources */,
 				B002C07924CD96FE00F6DC70 /* FlashCardApp.swift in Sources */,
 				B0692FE524E5163100C40BA6 /* CardSet.swift in Sources */,
-				B0692FE224E4FA2500C40BA6 /* CreateCardSetsPageView.swift in Sources */,
-				B0692FE024E4ECA000C40BA6 /* HomePageView.swift in Sources */,
+				B0692FE224E4FA2500C40BA6 /* CreateCardSetsPage.swift in Sources */,
+				B0692FE024E4ECA000C40BA6 /* HomePage.swift in Sources */,
 				B002C0A724CD984800F6DC70 /* CardSetList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
