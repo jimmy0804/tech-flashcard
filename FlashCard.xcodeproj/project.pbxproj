@@ -117,7 +117,7 @@
 		B002C07724CD96FE00F6DC70 /* FlashCard */ = {
 			isa = PBXGroup;
 			children = (
-				BF1DA5E524EE60310057E16F /* ViewModifiers */,
+				BF1DA5E524EE60310057E16F /* Modifiers */,
 				B002C0A324CD97F900F6DC70 /* Views */,
 				BF1DA5E024EE319D0057E16F /* Pages */,
 				B0692FE324E5160300C40BA6 /* Models */,
@@ -187,12 +187,12 @@
 			path = Pages;
 			sourceTree = "<group>";
 		};
-		BF1DA5E524EE60310057E16F /* ViewModifiers */ = {
+		BF1DA5E524EE60310057E16F /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
 				BF1DA5E624EE616C0057E16F /* DraggableViewModifier.swift */,
 			);
-			path = ViewModifiers;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

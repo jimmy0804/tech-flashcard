@@ -11,6 +11,7 @@ struct FlashCardView<Content>: View where Content: View {
     @State private var isFlipped = false
     @State private var isZIndexFlipped = false
     
+    private let flipAnimationDuration: TimeInterval = 0.3
     private let cornerRadius: CGFloat = 4.0
     
     let frontContent: () -> Content
@@ -31,7 +32,7 @@ struct FlashCardView<Content>: View where Content: View {
                     isFlipped ? .degrees(180.0) : .zero,
                     axis: (x: 0.0, y: 1.0, z: 0.0)
                 )
-                .animation(Animation.easeIn(duration: 0.3))
+                .animation(Animation.easeIn(duration: flipAnimationDuration))
                 .zIndex(isZIndexFlipped ? 0 : 1)
             
             RoundedRectangle(cornerRadius: cornerRadius)
@@ -41,7 +42,7 @@ struct FlashCardView<Content>: View where Content: View {
                     isFlipped ? .zero : .degrees(180.0),
                     axis: (x: 0.0, y: -1.0, z: 0.0)
                 )
-                .animation(Animation.easeIn(duration: 0.3))
+                .animation(Animation.easeIn(duration: flipAnimationDuration))
                 .zIndex(isZIndexFlipped ? 1 : 0)
         }
         .shadow(radius: 4.0)
@@ -49,14 +50,12 @@ struct FlashCardView<Content>: View where Content: View {
         .modifier(DraggableCard(completion: { action in
             
         }))
-        .onTapGesture(count: 1, perform: {
+        .onTapGesture() {
             isFlipped.toggle()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + (flipAnimationDuration / 2)) {
                 isZIndexFlipped.toggle()
             }
-        })
-        
-        
+        }
     }
 }
 

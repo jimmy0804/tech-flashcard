@@ -14,7 +14,16 @@ struct FlashCardPage: View {
     }
 }
 
+struct FlashCardStackItemViewModel {
+    let rotationDegrees: Angle
+}
+
 struct FlashCardStack: View {
+    @State var items = [Card]()
+//    @State var
+        
+    
+
     var body: some View {
         ZStack {
             FlashCardView() {
