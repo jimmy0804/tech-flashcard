@@ -24,6 +24,9 @@
 		BF1DA5E224EE33150057E16F /* FlashCardPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DA5E124EE33150057E16F /* FlashCardPage.swift */; };
 		BF1DA5E424EE352E0057E16F /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DA5E324EE352E0057E16F /* FlashCardView.swift */; };
 		BF1DA5E724EE616C0057E16F /* DraggableViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1DA5E624EE616C0057E16F /* DraggableViewModifier.swift */; };
+		BF5EC94B24F028B100A89C9A /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EC94A24F028B100A89C9A /* CardStack.swift */; };
+		BF5EC94D24F0290300A89C9A /* CardHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EC94C24F0290300A89C9A /* CardHolder.swift */; };
+		BF5EC94F24F0292C00A89C9A /* CardStackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5EC94E24F0292C00A89C9A /* CardStackViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		BF1DA5E124EE33150057E16F /* FlashCardPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardPage.swift; sourceTree = "<group>"; };
 		BF1DA5E324EE352E0057E16F /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		BF1DA5E624EE616C0057E16F /* DraggableViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DraggableViewModifier.swift; sourceTree = "<group>"; };
+		BF5EC94A24F028B100A89C9A /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		BF5EC94C24F0290300A89C9A /* CardHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHolder.swift; sourceTree = "<group>"; };
+		BF5EC94E24F0292C00A89C9A /* CardStackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStackViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,10 +165,10 @@
 		B002C0A324CD97F900F6DC70 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF5EC94924F0288D00A89C9A /* FlashCard */,
 				B002C0A424CD983F00F6DC70 /* CardSetListItem.swift */,
 				B0692FEA24E52FF400C40BA6 /* CardSetListItemViewModel.swift */,
 				B002C0A624CD984800F6DC70 /* CardSetList.swift */,
-				BF1DA5E324EE352E0057E16F /* FlashCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -193,6 +199,17 @@
 				BF1DA5E624EE616C0057E16F /* DraggableViewModifier.swift */,
 			);
 			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		BF5EC94924F0288D00A89C9A /* FlashCard */ = {
+			isa = PBXGroup;
+			children = (
+				BF1DA5E324EE352E0057E16F /* FlashCardView.swift */,
+				BF5EC94A24F028B100A89C9A /* CardStack.swift */,
+				BF5EC94E24F0292C00A89C9A /* CardStackViewModel.swift */,
+				BF5EC94C24F0290300A89C9A /* CardHolder.swift */,
+			);
+			path = FlashCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,11 +347,14 @@
 				B002C07B24CD96FE00F6DC70 /* ContentView.swift in Sources */,
 				BF1DA5E224EE33150057E16F /* FlashCardPage.swift in Sources */,
 				B0692FED24E5314A00C40BA6 /* HomePageViewModel.swift in Sources */,
+				BF5EC94B24F028B100A89C9A /* CardStack.swift in Sources */,
 				B002C07924CD96FE00F6DC70 /* FlashCardApp.swift in Sources */,
 				B0692FE524E5163100C40BA6 /* CardSet.swift in Sources */,
 				B0692FE224E4FA2500C40BA6 /* CreateCardSetsPage.swift in Sources */,
+				BF5EC94F24F0292C00A89C9A /* CardStackViewModel.swift in Sources */,
 				BF1DA5E724EE616C0057E16F /* DraggableViewModifier.swift in Sources */,
 				BF1DA5E424EE352E0057E16F /* FlashCardView.swift in Sources */,
+				BF5EC94D24F0290300A89C9A /* CardHolder.swift in Sources */,
 				B0692FE024E4ECA000C40BA6 /* HomePage.swift in Sources */,
 				B002C0A724CD984800F6DC70 /* CardSetList.swift in Sources */,
 			);
@@ -493,6 +513,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCard/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Z3YZ97M6M;
@@ -505,6 +526,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmyyeung.FlashCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -515,6 +537,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCard/Preview Content\"";
 				DEVELOPMENT_TEAM = 3Z3YZ97M6M;
@@ -527,6 +550,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.jimmyyeung.FlashCard;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

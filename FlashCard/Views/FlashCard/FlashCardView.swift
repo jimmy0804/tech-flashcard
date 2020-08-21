@@ -47,9 +47,6 @@ struct FlashCardView<Content>: View where Content: View {
         }
         .shadow(radius: 4.0)
         .contentShape(RoundedRectangle(cornerRadius: cornerRadius))
-        .modifier(DraggableCard(completion: { action in
-            
-        }))
         .onTapGesture() {
             isFlipped.toggle()
             DispatchQueue.main.asyncAfter(deadline: .now() + (flipAnimationDuration / 2)) {
