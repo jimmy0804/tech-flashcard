@@ -21,6 +21,10 @@ struct CardHolder {
         card.answer
     }
     
+    var draggable: Bool {
+        isFront
+    }
+    
     private let card: Card
     
     // MARK: - Init

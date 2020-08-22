@@ -18,6 +18,7 @@ struct DraggableCard: ViewModifier {
     @State private var lastDragValue: DragGesture.Value?
     @Binding var isDragging: Bool
 
+    private let isDragAllowed: Bool
     private let draggedToActionThreshold: CGFloat = 120.0
     private let slideOutDistance: CGFloat = 1500.0
     private let animationDuration: TimeInterval = 0.3
@@ -28,8 +29,10 @@ struct DraggableCard: ViewModifier {
     
     private let completion: (Action) -> Void
     
-    init(isDragging: Binding<Bool>,
+    init(isDragAllowed: Bool,
+         isDragging: Binding<Bool>,
          completion: @escaping (Action) -> Void) {
+        self.isDragAllowed = isDragAllowed
         self._isDragging = isDragging
         self.completion = completion
     }
@@ -41,6 +44,7 @@ struct DraggableCard: ViewModifier {
             .gesture(
                 DragGesture(minimumDistance: 0.0)
                     .onChanged({ value in
+                        guard isDragAllowed else { return }
                         lastDragOffset = value.translation
                         lastDragValue = value
                         isDragging = true

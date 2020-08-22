@@ -34,25 +34,21 @@ struct FlashCardStack: View {
                 }
                 .rotationEffect(cardHolder.rotationDegrees)
                 .animation(.easeIn(duration: 0.1))
-                .modifier(drag)
+                .modifier(DraggableCard(isDragAllowed: true ,isDragging: $isDragging, completion: { action in
+                    switch action {
+                    case .draggedToLeft(let duration):
+                        viewModel.removeFrontCardAndRefillIfNeeded(with: duration)
+                    case .draggedToRight(let duration):
+                        viewModel.removeFrontCardAndRefillIfNeeded(with: duration)
+                    case .none:
+                        break
+                    }
+                }))
             }
         }
         .onAppear {
             viewModel.addCardsToCardHolders()
         }
-    }
-    
-    private var drag: some ViewModifier {
-        DraggableCard(isDragging: $isDragging, completion: { action in
-            switch action {
-            case .draggedToLeft(let duration):
-                viewModel.removeFrontCardAndRefillIfNeeded(with: duration)
-            case .draggedToRight(let duration):
-                viewModel.removeFrontCardAndRefillIfNeeded(with: duration)
-            case .none:
-                break
-            }
-        })
     }
 }
 
